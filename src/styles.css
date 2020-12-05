@@ -1,1 +1,20 @@
-
+ul{
+  margin: 0 auto;
+ list-style: none;
+ width:500px;
+}
+ul li{
+  width:250px;
+  height:150px;
+  background: #fff;
+  box-shadow: 0 0 18px rgba(0,0,0,0.6);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: center;
+}
+ul li span{
+  font-size: 25px;
+}
