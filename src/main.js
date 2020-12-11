@@ -1,6 +1,47 @@
 import './styles.css';
 
 
+
+
+
+const profile = {
+  firstName: "",
+  lastName: "",
+  setFullName: function(name){
+    let splitAndAssign = function(name){
+      let full_name = name.split(' ');
+      this.firstName = full_name[0];
+      this.lastName = full_name[1];
+
+    }
+    splitAndAssign.call(this,name);
+  }
+}
+
+
+
+
+profile.setFullName("Adilet Momunalev")
+console.log(profile.firstName);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Sum of numbers*/
 // function sumOfNumbers(arr){
 //   let start = Math.min(arr[0],arr[1]);
@@ -173,15 +214,49 @@ import './styles.css';
 //   let result = numbers.toString().split('').reverse().join('');
 //   return result;
 // }
-  const reverseNumbers = (input) =>{
-    let reverse = 0;
-    while(input!==0){
-      reverse = parseInt(reverse * 10) + parseInt(input % 10);
-      input= Math.floor(parseInt(input) / parseInt(10));
-      if(reverse < Number.MIN_VALUE || reverse > Number.MAX_VALUE){
-        return 0;
-      }
-    }
-    return reverse;
-  }
-console.log(reverseNumbers(54321));
+//   const reverseNumbers = (input) =>{
+//     let reverse = 0;
+//     while(input!==0){
+//       reverse = parseInt(reverse * 10) + parseInt(input % 10);
+//       input= Math.floor(parseInt(input) / parseInt(10));
+//       if(reverse < Number.MIN_VALUE || reverse > Number.MAX_VALUE){
+//         return 0;
+//       }
+//     }
+//     return reverse;
+//   }
+// console.log(reverseNumbers(54321));
+
+// const flatteningArray = (arr) =>{
+//   let newArray = arr.reduce( (acc, element) => {
+//     if(Array.isArray(element)){
+//       acc = acc.concat(flatteningArray(element));
+//     }
+//     else{
+//       acc.push(element)
+//     }
+//     return acc;
+//   },[])
+//   return newArray;
+//
+// }
+// console.log(flatteningArray([1,2,[1,5,[4]]]));
+// const longestSub = (str) =>{
+//   const set = new Set();
+//   let right = 0;
+//   let left = 0;
+//   let max = 0;
+//   while(right < str.length){
+//     if(set.has(str[right])){
+//       set.delete(str[left]);
+//       left++;
+//     }else{
+//       set.add(str[right]);
+//       max = Math.max(max, set.size)
+//       right++
+//     }
+//
+//   }
+//   return max;
+// }
+// ;console.log(longestSub('abbcdb'))
