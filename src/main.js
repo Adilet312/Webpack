@@ -1,28 +1,26 @@
 import './styles.css';
 
+//
+// const noRepeatingWords = (str1, str2) =>{
+//   let newStr = str1 + " " + str2;
+//   let array = newStr.split(' ');
+//   const obj = {};
+//   for(const element of array){
+//     obj[element] ? obj[element]++ : obj[element] = 1;
+//   }
+//   for (const key in obj){
+//     obj[key]%2===0 ? delete obj[key] : '';
+//   }
+//   return Object.keys(obj);
+// }
+//  console.log(noRepeatingWords('hello Adilet', 'hello World'));
 
 
-
-
-const profile = {
-  firstName: "",
-  lastName: "",
-  setFullName: function(name){
-    let splitAndAssign = function(name){
-      let full_name = name.split(' ');
-      this.firstName = full_name[0];
-      this.lastName = full_name[1];
-
-    }
-    splitAndAssign.call(this,name);
-  }
+Array.prototype.print = () =>{
+  return this.join('');
 }
 
-
-
-
-profile.setFullName("Adilet Momunalev")
-console.log(profile.firstName);
+console.log([2,3,4].print());
 
 
 
@@ -37,6 +35,32 @@ console.log(profile.firstName);
 
 
 
+// const groupAnagram = (arr) =>{
+//   const obj = {}
+//   for(let element of arr){
+//     let key = element.split('').sort().join('');
+//     obj[key] ? obj[key].push(element) : obj[key] = [element];
+//   }
+//   return Object.values(obj);
+// }
+// console.log(groupAnagram(["eat", "bat", "ate", "tab", "tea", "eat"]))
+// function longestSubstringLength (str) {
+//   const set = new Set()
+//   let left = 0, right = 0, max = -Infinity;
+//   while(right < str.length){
+//     if(set.has(str[right])){
+//       set.delete(str[left]);
+//       left++;
+//     }else{
+//       set.add(str[right])
+//       right++;
+//       max = Math.max( max, set.size);
+//     }
+//   }
+//   return str.substring(left,right+left);
+// }
+//
+// console.log(longestSubstringLength('ABCABADEC'))
 
 
 
