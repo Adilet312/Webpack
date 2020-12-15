@@ -1,6 +1,165 @@
 import './styles.css';
 
+
+
+
+// const sumNumbers = (arr) =>{
+//   const max = Math.max( arr[0],arr[1]);
+//   const min = Math.min( arr[0], arr[1]);
+//   let sum = 0;
+//   for( let start = min; start <=max; start++){
+//     sum+=start;
+//   }
+//   return sum;
+// }
+
+
+// const factorial = (num) =>{
+//   if(num<=1) return 1;
+//   return num * factorial( num - 1);
+// }
 //
+// console.log(factorial(4));
+
+
+// const fib = (num) =>{
+//   if(num < 2) return num;
+//   return fib( num -1) + fib( num - 2);
+// }
+//
+// console.log(fib(10));
+
+
+
+
+// const primeNumbers = (min, max) =>{
+//   const primes = [];
+//   let isPrime = true;
+//   while( min < max){
+//     let j = 2;
+//     while( min > j){
+//       if(min % j===0){
+//         isPrime = false;
+//       }
+//       j++;
+//     }
+//     isPrime && primes.push(min);
+//     isPrime = true;
+//     min++;
+//   }
+//   return primes;
+// }
+// console.log(primeNumbers(4,20));
+
+
+// const isPalindrome = (str) =>{
+//   let newStr = str.toLowerCase().split(' ').join('');
+//   console.log(newStr);
+//   for( let idx = 0; idx < newStr.length; idx++){
+//     if(newStr[idx]!==newStr[newStr.length - 1 -idx]){
+//       return false
+//     }
+//   }
+//   return true;
+// }
+// console.log(isPalindrome('race Car'));
+
+// const anagram = (str1,str2) =>{
+//   let newStr = str1.toLowerCase().split(' ').join('').split('').sort().join('');
+//   let newStr2 = str2.toLowerCase().split(' ').join('').split('').sort().join('');
+//   return newStr===newStr2 ? true : false;
+//
+// }
+// console.log(anagram('Iron','rinos'));
+
+// const reverseWords = (str) => {
+//   return str.split(' ').reverse().join(' ');
+// }
+//
+// console.log(reverseWords('Adilet is a great programmer '));
+
+// const removeVowels = (str) =>{
+//    let newStr = str.split('').filter( letter => !isVowel(letter.toLowerCase()) && letter);
+//    return newStr.join('');
+// }
+// function isVowel(letter){
+//   if(letter==='a' || letter==='e' || letter==='o' || letter==='i' ||letter==='u'){
+//     return true;
+//   }
+//   return false;
+// }
+//
+//
+// console.log(removeVowels('adilet is programmer'));
+//  const fullName = (arr) => {
+//    const full_names = []
+//    for(const element of arr){
+//      full_names.push(Object.values(element).join(' '))
+//    }
+//    return full_names;
+//  }
+// const names = [{firstname: 'Bruce', lastname: 'Wayne'}, {firstname: 'Clark', lastname: 'Kent'}]
+// console.log(fullName(names));
+
+
+
+// const longestWordString = (str) => str.split(' ').reduce( (acc,item) => acc.length < item.length ? acc = item : acc);
+//
+//
+// console.log(longestWordString('My name is Vishwas Momunaliev Ajar'));
+
+
+
+// const array_index = (numbers, indexes) =>{
+//   const array = [];
+//   for( let idx = 0; idx < numbers.length; idx++){
+//     array.splice(indexes[idx],0, numbers[idx])
+//   }
+//   return array;
+// }
+//
+// console.log(array_index([0,1,2,3,4],[0,1,2,2,1]));
+
+// const union = (arr1,arr2) =>{
+//   return [...arr1, ...arr2];
+// }
+// const intersection = ( arr1, arr2 ) =>{
+//   return arr1.filter( num => arr2.includes(num))
+// }
+// console.log(intersection([1,2,3,7],[3,6,2,9]));
+
+// const differences = (arr1, arr2) => arr1.filter( num => !arr2.includes(num));
+// const symmetricDiffernces = (arr1, arr2) => arr1.filter( item => !arr2.includes(item)).concat( arr2.filter( item => !arr1.includes(item)))
+// console.log(symmetricDiffernces([1,2,3,7],[3,6,2,9]));
+
+// const flatternArray = (arr) =>{
+//   const flattern_array = arr.reduce( (acc, item) => {
+//     Array.isArray(item) ? acc = acc.concat( flatternArray(item)) : acc.push(item);
+//     return acc;
+//   },[])
+//   return flattern_array;
+// }
+//
+// console.log(flatternArray([1,2,[4,5,1,[6,7,1],[2,3,6]]]));
+//
+
+// const findDuplicateElements = ( arr ) => arr.filter( (item, index) => arr.indexOf(item)!==index );
+// console.log(findDuplicateElements([2,3,4,5,2,4,8,1]));
+
+const person = {
+  money: 200
+}
+
+
+
+function doShopping(){
+  console.log(Math.sqrt(this.money))
+}
+ console.log(doShopping());
+
+
+let getMOney = doShopping.call(person);
+
 // const noRepeatingWords = (str1, str2) =>{
 //   let newStr = str1 + " " + str2;
 //   let array = newStr.split(' ');
@@ -16,21 +175,25 @@ import './styles.css';
 //  console.log(noRepeatingWords('hello Adilet', 'hello World'));
 
 
-Array.prototype.print = () =>{
-  return this.join('');
-}
-
-console.log([2,3,4].print());
 
 
-
-
-
-
-
-
-
-
+// const value = {
+//   penny:1,
+//   nickel:5,
+//   dime:10,
+//   quater:25,
+//   dollar:100
+// }
+// //20.47
+// const money = (total) =>{
+//   let dolRem = total*100 % value.dollar;
+//   let dollar = (total * 100 - dolRem) / 100;//20
+//   let quaterRem = dolRem % value.quater ;//0.17
+//   let quater = (dolRem - quaterRem)/value.quater;//1
+//   let dimeRem =
+//
+// }
+// console.log();
 
 
 
