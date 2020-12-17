@@ -3,6 +3,43 @@ import './styles.css';
 
 
 
+const powerOfThree = (num) =>{
+  return Math.log(num)/Math.log(2)%1===0;
+}
+
+console.log(powerOfThree(8));
+
+// const isNumberPalindrome = (num) =>{
+//   let howManyDigits = Math.floor(Math.log10(num) + 1);
+//   let mask = Math.pow( 10, (howManyDigits - 1));
+//   let size = howManyDigits / 2;
+//   for(let idx = 0; idx < size; idx++){
+//     let lastDigit = num % 10;
+//     let firstDigit = Math.floor(num / mask)
+//     if(lastDigit!==firstDigit){
+//       return false;
+//     }
+//     num = num%mask;
+//     num = Math.floor(num / 10)
+//     mask = mask / 100;
+//   }
+//   return true;
+// }
+//
+// console.log(isNumberPalindrome(4234));
+
+
+
+
+
+
+
+
+
+
+
+
+
 // const sumNumbers = (arr) =>{
 //   const max = Math.max( arr[0],arr[1]);
 //   const min = Math.min( arr[0], arr[1]);
@@ -146,20 +183,43 @@ import './styles.css';
 // const findDuplicateElements = ( arr ) => arr.filter( (item, index) => arr.indexOf(item)!==index );
 // console.log(findDuplicateElements([2,3,4,5,2,4,8,1]));
 
-const person = {
-  money: 200
-}
 
 
 
-function doShopping(){
-  console.log(Math.sqrt(this.money))
-}
- console.log(doShopping());
 
 
-let getMOney = doShopping.call(person);
-
+// const longestSubstring = (str) =>{
+//   let left = 0, right = 0, max = -Infinity;
+//   const set = new Set();
+//   while(right < str.length){
+//     if(set.has(str[right])){
+//       set.delete(str[left]);
+//       left++;
+//     }else{
+//       set.add( str[right]);
+//       max = Math.max(max, set.size);
+//       right++;
+//     }
+//   }
+//   console.log(left);
+//   return str.substring(left,left + max);
+// }
+// console.log(longestSubstring('abbcdb'));
+// const longestPalindrome = (str) =>{
+//   const set = new Set();
+//   let countPairs = 0;
+//   for(const letter of str){
+//     if(set.has(letter)){
+//       set.delete(letter);
+//       countPairs++;
+//     }else{
+//       set.add(letter)
+//     }
+//   }
+//   set.size ? countPairs = countPairs * 2 +1 : countPairs = countPairs * 2;
+//   return countPairs;
+// }
+//  console.log(longestPalindrome('abccccdd'));
 // const noRepeatingWords = (str1, str2) =>{
 //   let newStr = str1 + " " + str2;
 //   let array = newStr.split(' ');
