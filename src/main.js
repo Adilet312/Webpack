@@ -1,25 +1,21 @@
 import './styles.css';
 
+const validPalindrome = (str) => {
+  let s;
+  if(!str){
+    return false;
+  }
+  if(Array.isArray(str)){
+    s = str[0].toLowerCase().split(',').join('');
+  }else{
+    s = str.toLowerCase().split(' ').join('');
+  }
 
-
-function getDomainAddress(str){
-  return str.substring(0, str.length - 4);
+ for(let idx = 0; idx < s.length/2; idx++){
+   if(s[idx]!==s[s.length - 1 - idx]){
+     return false;
+   }
+ }
+ return true;
 }
-
-const displayArticle = (articles) => {
-  const temp = articles.map( article => `
-    <li>
-      <h1>${article.title}</h1>
-      <p>${article.post}</p>
-      <div class = "sites">
-        <h3>${getDomainAddress(article.site.site)}</h3>
-        <h3>${article.site.rank}</h3>
-      </div>
-      <a href = "www.${article.site.site}">${getDomainAddress(article.site.site)}</a>
-    </li>
-    `).join('')
-    let ul = document.querySelector('ul');
-    ul.innerHTML = temp;
-}
-
-window.addEventListener('DOMContentLoaded',()=> displayArticle(mergeObjects(articles,sites)));
+console.log(validPalindrome(["a,b,c,ba"]));
