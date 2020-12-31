@@ -7,7 +7,7 @@ const articles = [{
 {
   title:"Washington",
   post: "Eve shows you some different directions you can pursue to improve your knowledge of the React ecosystem.",
-  site:'cnn'
+  site:'washington'
 },{
   title:"CNN",
   post: "Eve shows you some different directions you can pursue to improve your knowledge of the React ecosystem.",
