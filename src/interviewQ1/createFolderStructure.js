@@ -1,17 +1,3 @@
-const deepCopy = (obj) =>{
-  if(obj===null || typeof obj !== 'object'){
-    return obj;
-  }
-  const cloneObject = Array.isArray(obj) ? [] : {};
-
-  for(const key in obj){
-    let value = obj[key];
-    cloneObject[key] = deepCopy(value);
-  }
-  return cloneObject;
-}
-
-
 const input = [
   { type: 'dir', name: 'dom', contents:
     [
@@ -43,4 +29,19 @@ const input = [
   { type: 'file', name: 'sql.md'},
   { type: 'file', name: 'xml.md'}
 ]
+const deepCopy = (data) => {
+  const target = Array.isArray(data) ? [] : {}
+  for(const key in data){
+    let value = data[key];
+    if(typeof value ==='object' && value!==null){
+      target[key] = deepCopy(value)
+
+    }else{
+      console.log("files: ",value);
+      target[key] = value;
+    }
+  }
+  return target;
+}
+
 console.log(deepCopy(input));
