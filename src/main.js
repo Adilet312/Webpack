@@ -21,29 +21,28 @@ const displayData = (data) => {
   const ul = document.querySelector('.output');
   const display_data = data.map( movie =>`
     <li class = 'card-container'>
-      <h1>${movie.Title}</h1>
-      <img src = ${movie.Poster}/>
+    <div class = 'card'>
+      <div class = 'front'>
+        <img src = ${movie.Poster}/>
+      </div>
+      <div class ='back'>
+        <h2>${movie.Title}</h2>
+        <h3>${movie.Year}</h3>
+      </div>
+    </div>
     </li>
     `).join('')
     ul.innerHTML = display_data;
 }
 
-// const debounce = (callBack, delay) => {
-//   let timeController;
-//   return function(...args){
-//     timeController && clearTimeout(timeController);
-//     timeController = setTimeout( ()=> callBack(...args),delay)
-//
-//   }
-// }
-let timeController = true;
-const throttle = (callBack, delay) =>{
+const debounce = (callBack, delay) => {
+  let timeController;
   return function(...args){
-    if(!timeController) return;
-    timeController = false;
-    callBack(...args);
-    setTimeout( () => timeController = true ,delay)
+    timeController && clearTimeout(timeController);
+    timeController = setTimeout( ()=> callBack(...args),delay)
+
   }
 }
+
 const input = document.querySelector('.search');
-input.addEventListener('input', throttle((e)=> fetchData(e.target.value).then(data => displayData(data.Search)).fetch(error => console.log(error)),3000));
+input.addEventListener('input', debounce((e)=> fetchData(e.target.value).then(data => displayData(data.Search)).fetch(error => console.log(error)),3000));
