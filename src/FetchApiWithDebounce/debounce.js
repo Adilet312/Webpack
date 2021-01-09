@@ -22,7 +22,18 @@ function debounce(callBack,delay){
   }
 }
 
-
+/*Throttle*/
+/*
+let timeController = true;
+const throttle = (callBack, delay) =>{
+  return function(...args){
+    if(!timeController) return;
+    timeController = false;
+    callBack(...args);
+    setTimeout( () => timeController = true ,delay)
+  }
+}
+*/
 function showData(result){
 console.log(result);
   let output  = result.map( movie =>`

@@ -4,5 +4,19 @@ section{
   height:30px;
   display: flex;
   flex-direction: row;
+  flex-wrap:wrap;
   margin: 0 auto;
+}
+ul {
+  display: flex;
+  list-style: none;
+  flex-direction: row;
+  justify-content:space-around;
+  flex-wrap: wrap;
+}
+ul li {
+  box-sizing:content-box;
+  width: 300px;
+  margin-top: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,.1);
 }
