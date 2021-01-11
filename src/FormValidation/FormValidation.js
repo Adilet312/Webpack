@@ -76,4 +76,30 @@ h1{
   color:green;
   text-align: center;
 }
+HTML:
+<section class='form-group'>
+  <form class = 'form-class' id= 'formId' name = 'userForm'>
+    <div class='form-control'>
+      <input type = 'text' name = 'firstName' class='firstName' placeholder = 'First name' required />
+      <span class='message'></span>
+    </div>
+    <div class='form-control'>
+      <input type = 'text' name = 'lastName' class = 'lastName' placeholder = 'Last name' required/>
+      <span class='message'></span>
+    </div>
+    <div class='form-control'>
+      <input type = 'email' name = 'email' class = 'email' placeholder = 'Email' required/>
+      <span class='message'></span>
+    </div>
+    <div class='form-control'>
+      <input type = 'password' name = 'password' class = 'password' placeholder = 'Password' required/>
+      <span class='message'></span>
+    </div>
+    <div class='form-control'>
+      <input type = 'password' name = 'passwordConfirmation' class = 'passwordConfirmation' placeholder = 'Repeat Password ' required/>
+      <span class='message'></span>
+    </div>
+      <input type = 'submit' value = 'Submit' class='submit' />
+  </form>
+</section>
 */
